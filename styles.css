@@ -1,3 +1,8 @@
+:root {
+    --form-width: 400px;
+    font-family: 'Arial', sans-serif;
+}
+
 body {
     min-height: 100vh;
     display: flex;
@@ -68,7 +73,6 @@ main>footer {
 }
 
 main>footer>button {
-    background-color: gray;
     padding: 1rem 2rem;
     border: 1px solid black;
     border-radius: 0.5rem;
