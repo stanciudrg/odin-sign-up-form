@@ -62,3 +62,21 @@ label+input {
     border-radius: 0.3rem;
     padding: 0.5rem;
 }
+
+main>footer {
+    width: var(--form-width);
+}
+
+main>footer>button {
+    background-color: gray;
+    padding: 1rem 2rem;
+    border: 1px solid black;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+main>footer a {
+    font-weight: bolder;
+    text-decoration: none;
+    color: black;
+}
