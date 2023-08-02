@@ -27,3 +27,38 @@ main>header {
     width: var(--form-width);
     margin-bottom: max(calc(10vh - 1rem), 4rem);
 }
+
+form {
+    width: var(--form-width);
+    margin-bottom: max(calc(10vh - 2rem), 3rem);
+}
+
+form>fieldset {
+    border-radius: 1rem;
+    display: flex;
+    flex-flow: column;
+    gap: 2rem;
+    position: relative;
+    border: 0;
+    border: 1px solid black;
+    padding: 2rem;
+}
+
+fieldset>legend {
+    position: absolute;
+    top: -40px;
+    left: 0;
+}
+
+fieldset>div {
+    display: flex;
+    flex-flow: column;
+    gap: 0.5rem;
+}
+
+label+input {
+    appearance: none;
+    border: 1px solid black;
+    border-radius: 0.3rem;
+    padding: 0.5rem;
+}
