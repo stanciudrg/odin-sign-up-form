@@ -83,6 +83,29 @@ body>header>div>img {
     filter: saturate(80%);
 }
 
+main {
+    background-color: var(--background-color);
+    background-image:
+        radial-gradient(at 40% 1%, hsla(212, 75%, 15%, 1) 0px, transparent 50%),
+        radial-gradient(at 96% 69%, hsla(225, 97%, 21%, 1) 0px, transparent 50%),
+        radial-gradient(at 20% 25%, rgb(93, 37, 131) 0px, transparent 50%),
+        radial-gradient(at 3% 98%, rgb(67, 17, 90) 0px, transparent 50%),
+        radial-gradient(at 2% 98%, hsla(208, 87%, 17%, 1) 0px, transparent 50%),
+        radial-gradient(at 36% 66%, hsla(246, 54%, 31%, 1) 0px, transparent 50%),
+        radial-gradient(at 68% 76%, hsla(177, 69%, 30%, 1) 0px, transparent 50%);
+    flex: 1;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0rem 1rem 1rem 1rem;
+}
+
+main>header {
+    width: var(--form-width);
+    margin-bottom: 1rem;
+}
+
 form {
     width: var(--form-width);
     margin-bottom: max(calc(10vh - 2rem), 3rem);
@@ -101,8 +124,9 @@ form>fieldset {
 
 fieldset>legend {
     position: absolute;
-    top: -40px;
-    left: 0;
+    visibility: hidden;
+    width: 0;
+    height: 0;
 }
 
 fieldset>div {
@@ -123,14 +147,43 @@ main>footer {
 }
 
 main>footer>button {
-    padding: 1rem 2rem;
-    border: 1px solid black;
-    border-radius: 0.5rem;
+    margin-bottom: 0.2rem;
+    background-color: transparent;
+    border: 0;
+    border-radius: 0.3rem;
     cursor: pointer;
+    box-shadow: 0px 0px 0px 2px var(--primary-color);
+    font-weight: bold;
+    color: var(--text-color);
+    width: 100%;
+}
+
+main>footer>button>p {
+    padding: 1rem 2rem;
+    margin: 0;
+}
+
+main>footer>button:hover {
+    background-color: white;
+}
+
+main>footer>button>p:hover {
+    background-color: hsla(240, 71%, 19%, 0.5);
+    background-image:
+        radial-gradient(at 40% 1%, rgb(22, 84, 159) 0px, transparent 50%),
+        radial-gradient(at 96% 69%, rgb(6, 57, 209) 0px, transparent 50%),
+        radial-gradient(at 20% 25%, rgb(129, 50, 182) 0px, transparent 50%),
+        radial-gradient(at 3% 98%, rgb(118, 29, 159) 0px, transparent 50%),
+        radial-gradient(at 2% 98%, rgb(11, 84, 148) 0px, transparent 50%),
+        radial-gradient(at 36% 66%, rgb(79, 63, 221) 0px, transparent 50%),
+        radial-gradient(at 68% 76%, rgb(31, 168, 161) 0px, transparent 50%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
 }
 
 main>footer a {
     font-weight: bolder;
     text-decoration: none;
-    color: black;
+    color: var(--accent-color);
 }
