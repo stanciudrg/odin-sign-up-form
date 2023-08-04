@@ -108,18 +108,19 @@ main>header {
 
 form {
     width: var(--form-width);
-    margin-bottom: max(calc(10vh - 2rem), 3rem);
+    margin-bottom: 2rem;
+    background: transparent;
 }
 
 form>fieldset {
-    border-radius: 1rem;
+    border-radius: 0.3rem;
     display: flex;
     flex-flow: column;
     gap: 2rem;
     position: relative;
     border: 0;
-    border: 1px solid black;
     padding: 2rem;
+    box-shadow: 0px 0px 0px 2px var(--primary-color);
 }
 
 fieldset>legend {
@@ -133,13 +134,45 @@ fieldset>div {
     display: flex;
     flex-flow: column;
     gap: 0.5rem;
+    font-weight: bold;
 }
 
-label+input {
-    appearance: none;
-    border: 1px solid black;
-    border-radius: 0.3rem;
+fieldset>div>label {
+    visibility: hidden;
+    position: absolute;
+    height: 0;
+    width: 0;
+}
+
+.input-field {
+    display: flex;
     padding: 0.5rem;
+    border-radius: 0.2rem;
+    border-bottom: 2px solid var(--primary-color)
+}
+
+.input-field svg {
+    fill: var(--primary-color);
+    height: 30px;
+    width: 30px;
+}
+
+.input-field>input {
+    appearance: none;
+    background-color: transparent;
+    border: 0;
+    color: var(--primary-color);
+    margin-left: 10px;
+    height: 30px;
+    width: 100%;
+}
+
+.input-field>input:focus {
+    outline: 0;
+}
+
+.input-field>input::placeholder {
+    color: rgba(255, 255, 255, 0.7)
 }
 
 main>footer {
