@@ -1,6 +1,12 @@
 :root {
     --form-width: 400px;
     font-family: 'Arial', sans-serif;
+    color: var(--text-color);
+    --text-color: #fbfbfe;
+    --background-color: hsla(240, 71%, 19%, 1);
+    --primary-color: #fbfbfe;
+    --secondary-color: #fbfbfe;
+    --accent-color: #fbfbfe;
 }
 
 body {
