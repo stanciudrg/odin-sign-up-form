@@ -196,3 +196,37 @@ footer a {
     text-decoration: none;
     color: var(--secondary-color);
 }
+
+@media (max-width: 850px) {
+
+    :root {
+        --form-width: 100%
+    }
+
+    .themes {
+        margin: 1rem 0 1.5rem 0;
+        justify-content: center;
+    }
+
+    .main-container {
+        flex-direction: column;
+    }
+
+    .main-container>.form-hero {
+        box-sizing: border-box;
+        background-image: url(hero-mobile.svg);
+        height: 100px;
+        width: 100%;
+    }
+
+    .main-container>.form-hero>svg {
+        width: 100px;
+    }
+
+    .main-container>.form-container {
+        border-top: 0;
+        border-left: 5px solid var(--secondary-color);
+        padding: 2rem 2rem 1rem 2rem;
+    }
+
+}
