@@ -33,7 +33,7 @@ main {
     padding: 0rem 1rem 1rem 1rem;
 }
 
-main>header {
+.form-container>header {
     width: var(--form-width);
     margin-bottom: 1rem;
 }
@@ -117,11 +117,11 @@ input:-webkit-autofill:active {
     transition-delay: 9999s;
 }
 
-main>footer {
+footer {
     width: var(--form-width);
 }
 
-main>footer>button {
+footer>button {
     margin-bottom: 0.2rem;
     background-color: transparent;
     border: 0;
@@ -133,16 +133,16 @@ main>footer>button {
     width: 100%;
 }
 
-main>footer>button>p {
+footer>button>p {
     padding: 1rem 2rem;
     margin: 0;
 }
 
-main>footer>button:hover {
+footer>button:hover {
     background-color: white;
 }
 
-main>footer>button>p:hover {
+footer>button>p:hover {
     background-color: hsla(240, 71%, 19%, 0.5);
     background-image:
         radial-gradient(at 40% 1%, rgb(22, 84, 159) 0px, transparent 50%),
@@ -157,7 +157,7 @@ main>footer>button>p:hover {
     color: transparent;
 }
 
-main>footer a {
+footer a {
     font-weight: bolder;
     text-decoration: none;
     color: var(--accent-color);
