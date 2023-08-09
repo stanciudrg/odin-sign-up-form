@@ -12,13 +12,17 @@
 
 <body>
     <main>
-        <div class="themes">
-            <div class="red"></div>
-            <div class="blue"></div>
-            <div class="orange"></div>
-            <div class="green"></div>
-            <div class="purple"></div>
-        </div>
+
+        <fieldset class="themes">
+            <legend>Choose your theme</legend>
+            <label for="light" class="light_theme-label">
+                <input type="radio" id="light" name="theme" value="light" checked>
+            </label>
+            <label for="dark" class="dark_theme-label">
+                <input type="radio" id="dark" name="theme" value="dark">
+            </label>
+        </fieldset>
+
         <div class="main-container">
             <div class="form-hero">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
