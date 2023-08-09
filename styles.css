@@ -186,6 +186,21 @@ fieldset>div>label {
     width: 100%;
 }
 
+.name-format,
+.email-format,
+.phone-format,
+.password-format {
+    position: absolute;
+    font-size: 0.9rem;
+    color: var(--transparent-color);
+    margin-top: 0.5rem;
+    transform: scale(0);
+}
+
+.visible {
+    transform: scale(1);
+}
+
 .input-field>input:focus {
     outline: 0;
 }
