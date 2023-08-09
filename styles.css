@@ -170,20 +170,42 @@ fieldset>div>label {
 }
 
 
-.input-field svg {
+.input-field>svg {
+    width: 40px;
     fill: var(--secondary-color);
-    height: 30px;
-    width: 30px;
 }
 
 .input-field>input {
+    width: 100%;
     appearance: none;
     background-color: transparent;
-    border: 0;
     color: var(--secondary-color);
+    margin-top: 3px;
     margin-left: 10px;
-    height: 30px;
-    width: 100%;
+    margin-right: 30px;
+    border: 0;
+}
+
+.input-field>input+span {
+    position: relative;
+}
+
+.input-field>input+span::before {
+    position: absolute;
+    top: 2px;
+    left: -20px;
+}
+
+.input-field>input:valid+span::before,
+.input-field>input:invalid+span::before {
+    content: "";
+    width: 25px;
+    height: 25px;
+    background-image: var(--valid-icon);
+}
+
+.input-field>input:invalid+span::before {
+    background-image: var(--invalid-icon);
 }
 
 .name-format,
