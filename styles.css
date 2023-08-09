@@ -22,17 +22,12 @@
     --transparent-color: rgba(255, 255, 255, 0.7)
 }
 
-.main-container {
-    display: flex;
-    box-shadow: 0px 0px 15px -3px rgba(0, 0, 0, 0.3);
-}
-
 body {
-    min-height: 100vh;
+    min-height: calc(100vh - 20px);
     display: flex;
-    background-color: var(--background-color);
     justify-content: center;
     align-items: center;
+    background-color: var(--background-color);
 }
 
 .themes {
@@ -99,7 +94,6 @@ body {
     transform: scale(1);
 }
 
-
 .main-container {
     display: flex;
     box-shadow: 0px 0px 15px -3px rgba(0, 0, 0, 0.3);
@@ -149,19 +143,23 @@ body {
     border: 0;
 }
 
+/* Hide fieldset legends and label names for sighted users but allow the elements to still be recognized by screen readers */
+
 fieldset>legend {
     position: absolute;
-    visibility: hidden;
     width: 0;
     height: 0;
+    visibility: hidden;
 }
 
 fieldset>div>label {
-    visibility: hidden;
     position: absolute;
-    height: 0;
     width: 0;
+    height: 0;
+    visibility: hidden;
 }
+
+/* --------------------------------------------------------- */
 
 .input-field {
     display: flex;
@@ -237,68 +235,76 @@ input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
-    -webkit-transition-delay: 9999s;
     transition-delay: 9999s;
+    -webkit-transition-delay: 9999s;
 }
 
-footer {
+/* ---------------------------------- */
+
+form>footer {
     width: var(--form-width);
 }
 
-footer>button {
-    margin-bottom: 0.2rem;
+form>footer>button {
+    width: 100%;
+    font-weight: bold;
     background-color: transparent;
+    color: var(--secondary-color);
+    padding: 1rem 2rem;
+    margin-bottom: 0.2rem;
     border: 0;
     border-radius: 0.3rem;
-    cursor: pointer;
     box-shadow: 0px 0px 0px 2px var(--secondary-color);
-    font-weight: bold;
-    color: var(--secondary-color);
-    width: 100%;
-    padding: 1rem 2rem;
+    cursor: pointer;
 }
 
-footer>button:hover {
+form>footer>button:hover {
     background-color: var(--secondary-color);
     color: var(--primary-color);
 }
 
-footer a {
-    font-weight: bolder;
+form>footer>button:focus {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+form>footer a {
     text-decoration: none;
+    font-weight: bolder;
     color: var(--secondary-color);
 }
 
 @media (max-width: 850px) {
 
     :root {
-        --form-width: 100%
+        --form-width: 100%;
+    }
+
+    body {
+        padding: 1rem;
     }
 
     .themes {
-        margin: 1rem 0 1.5rem 0;
-        justify-content: center;
+        margin-top: 0;
     }
 
     .main-container {
         flex-direction: column;
+        margin-bottom: 0;
     }
 
     .main-container>.form-hero {
-        box-sizing: border-box;
-        background-image: var(--mobile-background-image);
-        border-bottom: 5px solid var(--secondary-color);
-        height: 100px;
         width: 100%;
+        height: 100px;
+        background-image: var(--mobile-background-image);
+        border-right: 0;
+        border-bottom: 5px solid var(--secondary-color);
+        border-radius: 0.5rem 0.5rem 0 0;
     }
 
-    .main-container>.form-hero>svg {
-        width: 100px;
-    }
-
-    .main-container>.form-container {
-        border-top: 0;
+    .main-container>form {
         padding: 2rem 2rem 1rem 2rem;
+        border-radius: 0;
     }
 
 }
