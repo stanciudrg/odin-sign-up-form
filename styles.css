@@ -47,8 +47,17 @@ body {
     cursor: pointer;
 }
 
-.themes>label>#light,
-.themes>label>#dark {
+.themes>.light_theme-label {
+    --theme-color: #fbfefc;
+    background-color: var(--theme-color);
+}
+
+.themes>.dark_theme-label {
+    --theme-color: #242424;
+    background-color: var(--theme-color);
+}
+
+.themes>label>input {
     position: absolute;
     appearance: none;
     top: 10px;
@@ -66,17 +75,6 @@ body {
 .themes>label>#dark {
     background-color: #fbfbfe;
 }
-
-.themes>.light_theme-label {
-    --theme-color: #fbfefc;
-    background-color: var(--theme-color);
-}
-
-.themes>.dark_theme-label {
-    --theme-color: #242424;
-    background-color: var(--theme-color);
-}
-
 
 .themes>label>input:before {
     content: "";
@@ -139,7 +137,7 @@ body {
     display: flex;
     flex-flow: column;
     gap: 2.7rem;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
     border: 0;
 }
 
@@ -147,21 +145,26 @@ body {
 
 fieldset>legend {
     position: absolute;
-    width: 0;
-    height: 0;
-    visibility: hidden;
+    left: -9999px;
+    overflow: hidden;
 }
 
 fieldset>div>label {
     position: absolute;
-    width: 0;
-    height: 0;
-    visibility: hidden;
+    left: -9999px;
+    overflow: hidden;
+}
+
+.themes>label>span {
+    position: absolute;
+    left: -9999px;
+    overflow: hidden;
 }
 
 /* --------------------------------------------------------- */
 
 .input-field {
+    position: relative;
     display: flex;
     padding: 0.5rem;
     border-bottom: 2px solid var(--secondary-color);
@@ -186,6 +189,7 @@ fieldset>div>label {
 
 .input-field>input+span {
     position: relative;
+    transform: scale(0);
 }
 
 .input-field>input+span::before {
@@ -206,19 +210,24 @@ fieldset>div>label {
     background-image: var(--invalid-icon);
 }
 
-.name-format,
-.email-format,
-.phone-format,
-.password-format {
+.input-field .required {
+    position: absolute;
+    top: 120%;
+    right: 0;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: var(--transparent-color);
+}
+
+#name-format,
+#email-format,
+#phone-format,
+#password-format {
     position: absolute;
     font-size: 0.9rem;
     color: var(--transparent-color);
     margin-top: 0.5rem;
     transform: scale(0);
-}
-
-.visible {
-    transform: scale(1);
 }
 
 .input-field>input:focus {
