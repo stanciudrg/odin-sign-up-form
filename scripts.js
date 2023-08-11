@@ -1,105 +1,10 @@
-const nameInput = document.querySelector('input[type=text');
-const emailInput = document.querySelector('input[type=email');
-const phoneInput = document.querySelector('input[type=tel');
-const passwordInput = document.querySelector('input[type=password');
-
-nameInput.addEventListener('focus', (e) => {
-    document.querySelector('#name-format').style = "transform: scale(1)";
-})
-
-nameInput.addEventListener('blur', (e) => {
-    document.querySelector('#name-format').style = "transform: scale(0)";
-    if ((e.target.validity.valid == true || e.target.validity.valid == false) && e.target.value !== "") {
-        e.target.nextElementSibling.style = "transform: scale(1)";
-    }
-})
-
-nameInput.addEventListener('input', (e) => {
-    if (e.target.value === "") {
-        e.target.nextElementSibling.style = "transform: scale(0)";
-    }
-})
-
-nameInput.addEventListener('invalid', (e) => {
-    if (e.target.value !== "") {
-        e.target.nextElementSibling.style = "transform: scale(1)";
-    }
-})
-
-emailInput.addEventListener('focus', (e) => {
-    document.querySelector('#email-format').style = "transform: scale(1)";
-})
-
-emailInput.addEventListener('blur', (e) => {
-    document.querySelector('#email-format').style = "transform: scale(0)";
-    if ((e.target.validity.valid == true || e.target.validity.valid == false) && e.target.value !== "") {
-        e.target.nextElementSibling.style = "transform: scale(1)";
-    }
-})
-
-emailInput.addEventListener('input', (e) => {
-    if (e.target.value === "") {
-        e.target.nextElementSibling.style = "transform: scale(0)";
-    }
-})
-
-emailInput.addEventListener('invalid', (e) => {
-    if (e.target.value !== "") {
-        e.target.nextElementSibling.style = "transform: scale(1)";
-    }
-})
-
-phoneInput.addEventListener('focus', (e) => {
-    document.querySelector('#phone-format').style = "transform: scale(1)";
-})
-
-phoneInput.addEventListener('blur', (e) => {
-    document.querySelector('#phone-format').style = "transform: scale(0)";
-    if ((e.target.validity.valid == true || e.target.validity.valid == false) && e.target.value !== "") {
-        e.target.nextElementSibling.style = "transform: scale(1)";
-    }
-})
-
-phoneInput.addEventListener('input', (e) => {
-    if (e.target.value === "") {
-        e.target.nextElementSibling.style = "transform: scale(0)";
-    }
-})
-
-phoneInput.addEventListener('invalid', (e) => {
-    if (e.target.value !== "") {
-        e.target.nextElementSibling.style = "transform: scale(1)";
-    }
-})
-
-emailInput.addEventListener('invalid', (e) => {
-    if (e.target.value !== "") {
-        e.target.nextElementSibling.style = "transform: scale(1)";
-    }
-})
-
-passwordInput.addEventListener('focus', (e) => {
-    document.querySelector('#password-format').style = "transform: scale(1)";
-})
-
-passwordInput.addEventListener('blur', (e) => {
-    document.querySelector('#password-format').style = "transform: scale(0)";
-    if ((e.target.validity.valid == true || e.target.validity.valid == false) && e.target.value !== "") {
-        e.target.nextElementSibling.style = "transform: scale(1)";
-    }
-})
-
-passwordInput.addEventListener('input', (e) => {
-    if (e.target.value === "") {
-        e.target.nextElementSibling.style = "transform: scale(0)";
-    }
-})
-
-passwordInput.addEventListener('invalid', (e) => {
-    if (e.target.value !== "") {
-        e.target.nextElementSibling.style = "transform: scale(1)";
-    }
-})
+const nameInput = validate(document.querySelector('input[type=text'));
+const emailInput = validate(document.querySelector('input[type=email'));
+const phoneInput = {
+    validatePhoneNumber: validate(document.querySelector('input[type=tel')),
+    formatPhoneNumber: document.querySelector('input[type=tel').addEventListener('input', format)
+}
+const passwordInputs = document.querySelectorAll('input[type=password').forEach(input => validate(input));;
 
 document.querySelector('#light').addEventListener('change', (e) => {
     if (e.target.checked) {
@@ -114,3 +19,37 @@ document.querySelector('#dark').addEventListener('change', (e) => {
         root.className = 'dark';
     }
 });
+
+function validate(input) {
+
+    input.addEventListener('focus', (e) => {
+        if (!input.parentElement.parentElement.lastElementChild.classList.contains('duplicate-input')) { input.parentElement.parentElement.lastElementChild.style = "transform: scale(1)"; };
+    })
+
+    input.addEventListener('blur', (e) => {
+        if (!input.parentElement.parentElement.lastElementChild.classList.contains('duplicate-input')) { input.parentElement.parentElement.lastElementChild.style = "transform: scale(0)"; };
+        if ((e.target.validity.valid == true || e.target.validity.valid == false) && e.target.value !== "") {
+            e.target.nextElementSibling.style = "transform: scale(1)";
+        }
+    })
+
+    input.addEventListener('input', (e) => {
+        if (e.target.value === "") {
+            e.target.nextElementSibling.style = "transform: scale(0)";
+        }
+    })
+
+    input.addEventListener('invalid', (e) => {
+        if (e.target.value !== "") {
+            e.target.nextElementSibling.style = "transform: scale(1)";
+        }
+    })
+
+}
+
+function format(e) {
+
+    let phoneNumber = e.target.value.replace(/\D/g, '').match(/(\d{0,3})(\d{0,3})(\d{0,4})/);
+    e.target.value = !phoneNumber[2] ? phoneNumber[1] : phoneNumber[1] + '-' + phoneNumber[2] + (phoneNumber[3] ? '-' + phoneNumber[3] : '');
+
+}

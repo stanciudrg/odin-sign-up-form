@@ -222,7 +222,8 @@ fieldset>div>label {
 #name-format,
 #email-format,
 #phone-format,
-#password-format {
+#password-format,
+#confirm_password-format {
     position: absolute;
     font-size: 0.9rem;
     color: var(--transparent-color);
