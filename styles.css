@@ -177,6 +177,7 @@ fieldset>div>label {
 }
 
 .input-field>input {
+    position: relative;
     width: 100%;
     appearance: none;
     background-color: transparent;
@@ -188,7 +189,6 @@ fieldset>div>label {
 }
 
 .input-field>input+span {
-    position: relative;
     transform: scale(0);
 }
 
