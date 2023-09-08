@@ -203,6 +203,9 @@ fieldset>div>label {
     content: "";
     width: 25px;
     height: 25px;
+}
+
+.input-field>input:valid+span::before {
     background-image: var(--valid-icon);
 }
 

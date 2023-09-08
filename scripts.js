@@ -7,10 +7,6 @@ const formatPhoneNumber = document.querySelector('input[type=tel').addEventListe
 const validatePasswordInputs = document.querySelectorAll('input[type=password]').forEach(input => validate(input));
 const matchPasswordInputs = document.querySelectorAll('input[type=password]').forEach(input => input.addEventListener('input', matchPasswords))
 
-document.querySelector('input[type=email').addEventListener('input', (e) => {
-
-})
-
 function validate(input) {
 
     input.addEventListener('focus', (e) => {
